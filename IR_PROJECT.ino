@@ -1,10 +1,9 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "SamAdr";
-const char* password = "adrish123";
-
-String apiKey = "61TVJB8Z12UYH2SR";
+const char* ssid = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
+String apiKey = "YOUR_THINGSPEAK_API_KEY";
 const char* server = "http://api.thingspeak.com/update";
 
 #define SENSOR_PIN 4
