@@ -2,8 +2,6 @@
 
 Real-time ESP32-based object detection and counting system using **GPIO hardware interrupts**, **FreeRTOS dual-core tasks**, software debouncing, Wi-Fi, HTTP, and **ThingSpeak** cloud monitoring.
 
-> Embedded Systems / IoT Project — Dept. of Electronics & Telecommunication Engineering, Symbiosis Institute of Technology, Pune
-
 ---
 
 ## 📌 Overview
