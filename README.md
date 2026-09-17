@@ -31,7 +31,7 @@ The result is a real-time, dual-core embedded pipeline covering interrupt handli
 ## 🏛️ System Architecture
 
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph Sensing
         A[IR Sensor]
     end
