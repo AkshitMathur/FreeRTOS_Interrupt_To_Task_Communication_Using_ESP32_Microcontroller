@@ -28,24 +28,27 @@ The result is a real-time, dual-core embedded pipeline covering interrupt handli
 
 ---
 
-## 🏛️ System Architecture
+## 🏗️ System Architecture
 
 ```mermaid
-flowchart TD
-    subgraph Sensing
-        A[IR Sensor]
-    end
+flowchart LR
+    A["IR Sensor"] --> B["ESP32 GPIO 4"]
+    B --> C["GPIO Interrupt"]
+    C --> D["ISR"]
+    D --> E["200 ms Debounce"]
+    E --> F["Object Counter"]
 
-    A -->|Rising Edge| B[ESP32 GPIO 4]
-    B --> C[ISR - detectObject]
-    C -->|200ms Debounce| D[(Shared Object Counter)]
-    D --> E[Print Task - Core 1]
-    D --> F[Upload Task - Core 0]
-    E --> G[Serial Monitor]
-    F -- Wi-Fi / HTTP GET --> H[(ThingSpeak Cloud)]
-    H --> I[Dashboard]
-    I --> J[User]
+    F --> G["Print Task"]
+    F --> H["Upload Task"]
+
+    G --> I["Serial Monitor"]
+
+    H --> J["Wi-Fi"]
+    J --> K["HTTP GET"]
+    K --> L["ThingSpeak"]
+    L --> M["Dashboard"]
 ```
+
 
 ---
 
